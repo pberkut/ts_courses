@@ -37,4 +37,45 @@ let userBob = {
 let arrAny;
 arrAny = [123, 'text', true];
 let mixed = [1, 'text'];
+let numbersArr1 = [1, 2, 3];
+let numbersArr2 = [1, 2, 3];
+let users11 = [
+    { name: 'Tom', age: 16 },
+    { name: 'Cooper', age: 23 },
+    { name: 'Coopered', age: 28 },
+];
+let users = [
+    { name: 'Tom', age: 30 },
+    { name: 'Jack', age: 25 },
+    { name: 'Alice', age: 32 },
+];
+// ###################
+let notSure = 4;
+notSure = 'Hello';
+notSure = false;
+let num1;
+// num1 = notSure;
+// ###################
+function fetchUserData() {
+    return 'Tom';
+}
+let userData = fetchUserData(); // fetchUserData повертає невідомі дані
+if (typeof userData === 'string') {
+    console.log(userData.toUpperCase()); // OK, тепер ми знаємо, що це рядок
+}
+// Tuple
+let fixed;
+fixed = ['Text', 10];
+// fixed = ['Text', 10, 10]
+let tuple;
+tuple = ['Hello', 10, 20];
+// ###################### Union type
+function combine(param1, param2) {
+    if (typeof param1 === 'number' && typeof param2 === 'number') {
+        return param1 + param2;
+    }
+    else {
+        return param1.toString() + param2.toString();
+    }
+}
 //# sourceMappingURL=types.js.map

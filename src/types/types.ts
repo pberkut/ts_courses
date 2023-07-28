@@ -65,3 +65,68 @@ let arrAny: any[];
 arrAny = [123, 'text', true];
 
 let mixed: (number | string)[] = [1, 'text'];
+
+let numbersArr1: number[] = [1, 2, 3];
+let numbersArr2: Array<number> = [1, 2, 3];
+
+let users11: {
+  name: string;
+  age: number;
+}[] = [
+  { name: 'Tom', age: 16 },
+  { name: 'Cooper', age: 23 },
+  { name: 'Coopered', age: 28 },
+];
+
+type User1 = {
+  name: string;
+  age: number;
+};
+
+let users: User1[] = [
+  { name: 'Tom', age: 30 },
+  { name: 'Jack', age: 25 },
+  { name: 'Alice', age: 32 },
+];
+
+// ###################
+
+let notSure: unknown = 4;
+notSure = 'Hello';
+notSure = false;
+
+let num1: number;
+
+// num1 = notSure;
+
+// ###################
+
+function fetchUserData() {
+  return 'Tom';
+}
+
+let userData: unknown = fetchUserData(); // fetchUserData повертає невідомі дані
+if (typeof userData === 'string') {
+  console.log(userData.toUpperCase()); // OK, тепер ми знаємо, що це рядок
+}
+
+// Tuple
+
+let fixed: [string, number];
+
+fixed = ['Text', 10];
+
+// fixed = ['Text', 10, 10]
+
+let tuple: [string, ...number[]];
+tuple = ['Hello', 10, 20];
+
+// ###################### Union type
+
+function combine(param1: number | string, param2: number | string) {
+  if (typeof param1 === 'number' && typeof param2 === 'number') {
+    return param1 + param2;
+  } else {
+    return param1.toString() + param2.toString();
+  }
+}
